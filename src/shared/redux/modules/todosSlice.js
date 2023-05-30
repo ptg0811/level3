@@ -14,7 +14,7 @@ export const __getTodos = createAsyncThunk(
   "todos/getTodos",
   async (payload, thunkAPI) => {
     try {
-      const response = await axios.get("http://localhost:3001/todos");
+      const response = await axios.get("https://level3.herokuapp.com/todos");
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -27,7 +27,7 @@ export const __getTodoDetail = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/todos/${payload}`
+        `https://level3.herokuapp.com/todos/${payload}`
       );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
@@ -40,7 +40,10 @@ export const __postTodo = createAsyncThunk(
   "todos/postTodo",
   async (payload, thunkAPI) => {
     try {
-      const response = await axios.post("http://localhost:3001/todos", payload);
+      const response = await axios.post(
+        "https://level3.herokuapp.com/todos",
+        payload
+      );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -53,7 +56,7 @@ export const __deleteTodo = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/todos/${payload}`
+        `https://level3.herokuapp.com/todos/${payload}`
       );
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
@@ -67,7 +70,7 @@ export const __updateIsDoneTodo = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.patch(
-        `http://localhost:3001/todos/${payload.id}`,
+        `https://level3.herokuapp.com/todos/${payload.id}`,
         payload
       );
       return thunkAPI.fulfillWithValue(response.data);
@@ -82,7 +85,7 @@ export const __editTodo = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.patch(
-        `http://localhost:3001/todos/${payload.id}`,
+        `https://level3.herokuapp.com/todos/${payload.id}`,
         payload
       );
       return thunkAPI.fulfillWithValue(response.data);
@@ -97,7 +100,7 @@ export const __patchComment = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.patch(
-        `http://localhost:3001/todos/${payload.id}`,
+        `https://level3.herokuapp.com/todos/${payload.id}`,
         payload
       );
       return thunkAPI.fulfillWithValue(response.data);
@@ -112,7 +115,7 @@ export const __deleteComment = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await axios.patch(
-        `http://localhost:3001/todos/${payload.id}`,
+        `https://level3.herokuapp.com/todos/${payload.id}`,
         payload
       );
       return thunkAPI.fulfillWithValue(response.data);
